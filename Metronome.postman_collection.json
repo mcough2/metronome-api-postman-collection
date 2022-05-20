@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "4f8f716e-fe60-4127-abd2-5340448c9f26",
+		"name": "Metronome",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ingest Events",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{API token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\"transaction_id\": \"{{$randomInt}}\",\n    \"customer_id\": \"77c1844e-55d7-41c0-8705-906ce8fe8ae6\",\n    \"event_type\": \"mike_event\",\n    \"timestamp\": \"{{$isoTimestamp}}\",\n    \"properties\": {\n        \"cluster_id\": \"42\",\n        \"cpu_seconds\": 60,\n        \"region\": \"Europe\"\n    }\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/v1/ingest",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"v1",
+						"ingest"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{API token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API token",
+			"value": "5724f95c60e2f972bab7a04ecf31e452d39669d0be66ca1c4256e2d8750aae33"
+		},
+		{
+			"key": "base_url",
+			"value": "https://api.metronome.com"
+		},
+		{
+			"key": "customer_id",
+			"value": "77c1844e-55d7-41c0-8705-906ce8fe8ae6",
+			"type": "string"
+		},
+		{
+			"key": "event_type",
+			"value": "test_event",
+			"type": "string"
+		},
+		{
+			"key": "transaction_id",
+			"value": "test_transaction_id",
+			"type": "string"
+		},
+		{
+			"key": "RFC_time",
+			"value": ""
+		}
+	]
+}
