@@ -92,31 +92,23 @@
 	],
 	"variable": [
 		{
-			"key": "API token",
-			"value": "5724f95c60e2f972bab7a04ecf31e452d39669d0be66ca1c4256e2d8750aae33"
+		    "key": "API token",
+		    "value": "API Authorization Token" 
 		},
-		{
+	    {
 			"key": "base_url",
-			"value": "https://api.metronome.com"
+			"value": "https://api.metronome.com",
+			"type": "string"
 		},
 		{
 			"key": "customer_id",
-			"value": "77c1844e-55d7-41c0-8705-906ce8fe8ae6",
+			"value": "(required) which customer the event applies to",
 			"type": "string"
 		},
 		{
 			"key": "event_type",
-			"value": "test_event",
+			"value": "(required) the kind of event, e.g. page_view or sent_email",
 			"type": "string"
-		},
-		{
-			"key": "transaction_id",
-			"value": "test_transaction_id",
-			"type": "string"
-		},
-		{
-			"key": "RFC_time",
-			"value": ""
 		}
 	]
 }
